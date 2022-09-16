@@ -1,0 +1,713 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+/** @var $block \Magento\Catalog\Block\Product\View */
+?>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    require(['jquery'], function($) {
+        $(document).ready(function() {
+            var setCountry;
+            $('#formsubmit').on('click', function() {
+                var code = $("#Countryphone").val();
+                setCountry = countryCodeToCountry(code);
+                $("#Country").val(setCountry);
+                var getURL = window.location;
+                $("input[name='LEADCF8']").val(getURL).change();
+            });
+
+            function countryCodeToCountry(code) {
+                if (code == "1") return "USA";
+                if (code == "44") return "UK";
+                if (code == "213") return "Algeria";
+                if (code == "376") return "Andorra";
+                if (code == "244") return "Angola";
+                if (code == "1264") return "Anguilla";
+                if (code == "1268") return "Antigua &amp; Barbuda";
+                if (code == "54") return "Argentina";
+                if (code == "374") return "Armenia";
+                if (code == "297") return "Aruba";
+                if (code == "61") return "Australia";
+                if (code == "43") return "Austria";
+                if (code == "994") return "Azerbaijan";
+                if (code == "1242") return "Bahamas";
+                if (code == "973") return "Bahrain";
+                if (code == "880") return "Bangladesh";
+                if (code == "1246") return "Barbados";
+                if (code == "375") return "Belarus";
+                if (code == "32") return "Belgium";
+                if (code == "501") return "Belize";
+                if (code == "229") return "Benin";
+                if (code == "1441") return "Bermuda";
+                if (code == "975") return "Bhutan";
+                if (code == "591") return "Bolivia";
+                if (code == "387") return "Bosnia Herzegovina";
+                if (code == "267") return "Botswana";
+                if (code == "55") return "Brazil";
+                if (code == "673") return "Brunei";
+                if (code == "359") return "Bulgaria";
+                if (code == "226") return "Burkina Faso";
+                if (code == "257") return "Burundi";
+                if (code == "855") return "Cambodia";
+                if (code == "237") return "Cameroon";
+                if (code == "1") return "Canada";
+                if (code == "238") return "Cape Verde Islands";
+                if (code == "1345") return "Cayman Islands";
+                if (code == "236") return "Central African Republic";
+                if (code == "56") return "Chile";
+                if (code == "86") return "China";
+                if (code == "57") return "Colombia";
+                if (code == "269") return "Comoros";
+                if (code == "242") return "Congo";
+                if (code == "682") return "Cook Islands";
+                if (code == "506") return "Costa Rica";
+                if (code == "385") return "Croatia";
+                if (code == "53") return "Cuba";
+                if (code == "90392") return "Cyprus North";
+                if (code == "357") return "Cyprus South";
+                if (code == "42") return "Czech Republic";
+                if (code == "45") return "Denmark";
+                if (code == "253") return "Djibouti";
+                if (code == "1809") return "Dominica";
+                if (code == "1809") return "Dominican Republic";
+                if (code == "593") return "Ecuador";
+                if (code == "20") return "Egypt";
+                if (code == "503") return "El Salvador";
+                if (code == "240") return "Equatorial Guinea";
+                if (code == "291") return "Eritrea";
+                if (code == "372") return "Estonia";
+                if (code == "251") return "Ethiopia";
+                if (code == "500") return "Falkland Islands";
+                if (code == "298") return "Faroe Islands";
+                if (code == "679") return "Fiji";
+                if (code == "358") return "Finland";
+                if (code == "33") return "France";
+                if (code == "594") return "French Guiana";
+                if (code == "689") return "French Polynesia";
+                if (code == "241") return "Gabon";
+                if (code == "220") return "Gambia";
+                if (code == "7880") return "Georgia";
+                if (code == "49") return "Germany";
+                if (code == "233") return "Ghana";
+                if (code == "350") return "Gibraltar";
+                if (code == "30") return "Greece";
+                if (code == "299") return "Greenland";
+                if (code == "147") return "Grenada";
+                if (code == "590") return "Guadeloupe";
+                if (code == "671") return "Guam";
+                if (code == "502") return "Guatemala";
+                if (code == "224") return "Guinea";
+                if (code == "245") return "Guinea - Bissau";
+                if (code == "592") return "Guyana";
+                if (code == "509") return "Haiti";
+                if (code == "504") return "Honduras";
+                if (code == "852") return "Hong Kong";
+                if (code == "36") return "Hungary";
+                if (code == "354") return "Iceland";
+                if (code == "91") return "India";
+                if (code == "62") return "Indonesia";
+                if (code == "98") return "Iran";
+                if (code == "964") return "Iraq";
+                if (code == "353") return "Ireland";
+                if (code == "972") return "Israel";
+                if (code == "39") return "Italy";
+                if (code == "1876") return "Jamaica";
+                if (code == "81") return "Japan";
+                if (code == "962") return "Jordan";
+                if (code == "7") return "Kazakhstan";
+                if (code == "254") return "Kenya";
+                if (code == "686") return "Kiribati";
+                if (code == "850") return "Korea North";
+                if (code == "82") return "Korea South";
+                if (code == "965") return "Kuwait";
+                if (code == "996") return "Kyrgyzstan";
+                if (code == "856") return "Laos";
+                if (code == "371") return "Latvia";
+                if (code == "961") return "Lebanon";
+                if (code == "266") return "Lesotho";
+                if (code == "231") return "Liberia";
+                if (code == "218") return "Libya";
+                if (code == "417") return "Liechtenstein";
+                if (code == "370") return "Lithuania";
+                if (code == "352") return "Luxembourg";
+                if (code == "853") return "Macao";
+                if (code == "389") return "Macedonia";
+                if (code == "261") return "Madagascar";
+                if (code == "265") return "Malawi";
+                if (code == "60") return "Malaysia";
+                if (code == "960") return "Maldives";
+                if (code == "223") return "Mali";
+                if (code == "356") return "Malta";
+                if (code == "692") return "Marshall Islands";
+                if (code == "596") return "Martinique";
+                if (code == "222") return "Mauritania";
+                if (code == "269") return "Mayotte";
+                if (code == "52") return "Mexico";
+                if (code == "691") return "Micronesia";
+                if (code == "373") return "Moldova";
+                if (code == "377") return "Monaco";
+                if (code == "976") return "Mongolia";
+                if (code == "1664") return "Montserrat";
+                if (code == "212") return "Morocco";
+                if (code == "258") return "Mozambique";
+                if (code == "95") return "Myanmar";
+                if (code == "264") return "Namibia";
+                if (code == "674") return "Nauru";
+                if (code == "977") return "Nepal";
+                if (code == "31") return "Netherlands";
+                if (code == "687") return "New Caledonia";
+                if (code == "64") return "New Zealand";
+                if (code == "505") return "Nicaragua";
+                if (code == "227") return "Niger";
+                if (code == "234") return "Nigeria";
+                if (code == "683") return "Niue";
+                if (code == "672") return "Norfolk Islands";
+                if (code == "670") return "Northern Marianas";
+                if (code == "47") return "Norway";
+                if (code == "968") return "Oman";
+                if (code == "680") return "Palau";
+                if (code == "507") return "Panama";
+                if (code == "675") return "Papua New Guinea";
+                if (code == "595") return "Paraguay";
+                if (code == "51") return "Peru";
+                if (code == "63") return "Philippines";
+                if (code == "48") return "Poland";
+                if (code == "351") return "Portugal";
+                if (code == "1787") return "Puerto Rico";
+                if (code == "974") return "Qatar";
+                if (code == "262") return "Reunion";
+                if (code == "40") return "Romania";
+                if (code == "7") return "Russia";
+                if (code == "250") return "Rwanda";
+                if (code == "378") return "San Marino";
+                if (code == "239") return "Sao Tome &amp; Principe";
+                if (code == "966") return "Saudi Arabia";
+                if (code == "221") return "Senegal";
+                if (code == "381") return "Serbia";
+                if (code == "248") return "Seychelles";
+                if (code == "232") return "Sierra Leone";
+                if (code == "65") return "Singapore";
+                if (code == "421") return "Slovak Republic";
+                if (code == "386") return "Slovenia";
+                if (code == "677") return "Solomon Islands";
+                if (code == "252") return "Somalia";
+                if (code == "27") return "South Africa";
+                if (code == "34") return "Spain";
+                if (code == "94") return "Sri Lanka";
+                if (code == "290") return "St. Helena";
+                if (code == "1869") return "St. Kitts";
+                if (code == "1758") return "St. Lucia";
+                if (code == "249") return "Sudan";
+                if (code == "597") return "Suriname";
+                if (code == "268") return "Swaziland";
+                if (code == "46") return "Sweden";
+                if (code == "41") return "Switzerland";
+                if (code == "963") return "Syria";
+                if (code == "886") return "Taiwan";
+                if (code == "7") return "Tajikstan";
+                if (code == "66") return "Thailand";
+                if (code == "228") return "Togo";
+                if (code == "676") return "Tonga";
+                if (code == "1868") return "Trinidad &amp; Tobago";
+                if (code == "216") return "Tunisia";
+                if (code == "90") return "Turkey";
+                if (code == "993") return "Turkmenistan";
+                if (code == "1649") return "Turks &amp; Caicos Islands";
+                if (code == "688") return "Tuvalu";
+                if (code == "256") return "Uganda";
+                if (code == "44") return "UK";
+                if (code == "380") return "Ukraine";
+                if (code == "971") return "United Arab Emirates";
+                if (code == "598") return "Uruguay";
+                if (code == "1") return "USA";
+                if (code == "7") return "Uzbekistan";
+                if (code == "678") return "Vanuatu";
+                if (code == "379") return "Vatican City";
+                if (code == "58") return "Venezuela";
+                if (code == "84") return "Vietnam";
+                if (code == "1284") return "Virgin Islands - British";
+                if (code == "1340") return "Virgin Islands - US";
+                if (code == "681") return "Wallis &amp; Futuna";
+                if (code == "969") return "Yemen (North)";
+                if (code == "967") return "Yemen (South)";
+                if (code == "260") return "Zambia";
+                if (code == "263") return "Zimbabwe";
+                return '';
+            };
+
+        })
+    });
+</script>
+<div id='Quote-form'>
+    <div class="Request-for-Quote">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 pop-title">Request for a Quote</div>
+            <div class="col-md-3"></div>
+        </div>
+        <form action='https://crm.zoho.in/crm/WebToLeadForm' name=WebToLeads329181000000257001 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory329181000000257001()' accept-charset='UTF-8'>
+            <input type='text' style='display:none;' name='xnQsjsdp' value='6cd952f3e5be67584d0644fe79b8ff8fea78abdc9f436bd23b83e47605cabebd'></input>
+            <input type='hidden' name='zc_gad' id='zc_gad' value=''></input>
+            <input type='text' style='display:none;' name='xmIwtLD' value='11d2381a628d4e940a5dcf2b3cf079bacdbef2105b8a2867d53fa4a03cc6ccb3'></input>
+            <input type='text' style='display:none;' name='actionType' value='TGVhZHM='></input>
+            <input type='text' style='display:none;' name='returnURL' value='http&#x3a;&#x2f;&#x2f;dcgears.com/thank-you&#x2f;'></input>
+            <!-- Do not remove this code. -->
+            <input type='text' style='display:none;' id='ldeskuid' name='ldeskuid'></input>
+            <input type='text' style='display:none;' id='LDTuvid' name='LDTuvid'></input>
+            <input type='text' style='display:none;' id='Lead_Source' name='Lead Source' value="Online&#x20;Store"></input>
+            <input type='text' style='display:none;' id='LEADCF8' name='LEADCF8' value=""></input>
+            <input type='hidden' name='Country' id='Country' value=""></input>
+            <!-- Do not remove this code. -->
+            <div class="contact-us row">
+                <label>
+                    <span class="col-md-12 txt">Your Name<span class="asterisk">*</span>
+                    </span>
+                </label>
+                <input style="border-radius: 4px;   margin: 8px 15.5px 9px 15.5px;" type="text" name="Last Name" id="Last_Name" placeholder="Ex. John Doe" required />
+
+                <label>
+                    <span class=" col-md-12 txt">Company Email<span class="asterisk">*</span>
+                    </span>
+                </label>
+                <input style="border-radius: 4px;   margin: 8px 15.5px 9px 15.5px;" type="email" name="Email" id="Email" placeholder="Ex. john.doe@example.com" required />
+            </div>
+
+            <div class="column-combine row">
+                <div class="col-md-4">
+                    <label>
+                        <span class="txt">Contact No<span class="asterisk">*</span>
+                        </span>
+                    </label>
+                    <select style="border-radius: 4px; margin: 4px 0px 0px 0px; color:#666;" id="Countryphone" name='Countryphone' placeholder="Country.." required>
+                        <option value='' selected=''>Country Code</option>
+                        <option Country="US" value="1">USA (+1)</option>
+                        <option country="GB" value="44">UK (+44)</option>
+                        <option Country="DZ" value="213">Algeria (+213)</option>
+                        <option Country="AD" value="376">Andorra (+376)</option>
+                        <option Country="AO" value="244">Angola (+244)</option>
+                        <option Country="AI" value="1264">Anguilla (+1264)</option>
+                        <option Country="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+                        <option Country="AR" value="54">Argentina (+54)</option>
+                        <option Country="AM" value="374">Armenia (+374)</option>
+                        <option Country="AW" value="297">Aruba (+297)</option>
+                        <option Country="AU" value="61">Australia (+61)</option>
+                        <option Country="AT" value="43">Austria (+43)</option>
+                        <option Country="AZ" value="994">Azerbaijan (+994)</option>
+                        <option Country="BS" value="1242">Bahamas (+1242)</option>
+                        <option Country="BH" value="973">Bahrain (+973)</option>
+                        <option Country="BD" value="880">Bangladesh (+880)</option>
+                        <option Country="BB" value="1246">Barbados (+1246)</option>
+                        <option Country="BY" value="375">Belarus (+375)</option>
+                        <option Country="BE" value="32">Belgium (+32)</option>
+                        <option Country="BZ" value="501">Belize (+501)</option>
+                        <option Country="BJ" value="229">Benin (+229)</option>
+                        <option Country="BM" value="1441">Bermuda (+1441)</option>
+                        <option Country="BT" value="975">Bhutan (+975)</option>
+                        <option Country="BO" value="591">Bolivia (+591)</option>
+                        <option Country="BA" value="387">Bosnia Herzegovina (+387)</option>
+                        <option Country="BW" value="267">Botswana (+267)</option>
+                        <option Country="BR" value="55">Brazil (+55)</option>
+                        <option Country="BN" value="673">Brunei (+673)</option>
+                        <option Country="BG" value="359">Bulgaria (+359)</option>
+                        <option Country="BF" value="226">Burkina Faso (+226)</option>
+                        <option Country="BI" value="257">Burundi (+257)</option>
+                        <option Country="KH" value="855">Cambodia (+855)</option>
+                        <option Country="CM" value="237">Cameroon (+237)</option>
+                        <option Country="CA" value="1">Canada (+1)</option>
+                        <option Country="CV" value="238">Cape Verde Islands (+238)</option>
+                        <option Country="KY" value="1345">Cayman Islands (+1345)</option>
+                        <option Country="CF" value="236">Central African Republic (+236)</option>
+                        <option Country="CL" value="56">Chile (+56)</option>
+                        <option Country="CN" value="86">China (+86)</option>
+                        <option Country="CO" value="57">Colombia (+57)</option>
+                        <option Country="KM" value="269">Comoros (+269)</option>
+                        <option Country="CG" value="242">Congo (+242)</option>
+                        <option Country="CK" value="682">Cook Islands (+682)</option>
+                        <option Country="CR" value="506">Costa Rica (+506)</option>
+                        <option Country="HR" value="385">Croatia (+385)</option>
+                        <option Country="CU" value="53">Cuba (+53)</option>
+                        <option Country="CY" value="90392">Cyprus North (+90392)</option>
+                        <option Country="CY" value="357">Cyprus South (+357)</option>
+                        <option Country="CZ" value="42">Czech Republic (+42)</option>
+                        <option Country="DK" value="45">Denmark (+45)</option>
+                        <option Country="DJ" value="253">Djibouti (+253)</option>
+                        <option Country="DM" value="1809">Dominica (+1809)</option>
+                        <option Country="DO" value="1809">Dominican Republic (+1809)</option>
+                        <option Country="EC" value="593">Ecuador (+593)</option>
+                        <option Country="EG" value="20">Egypt (+20)</option>
+                        <option Country="SV" value="503">El Salvador (+503)</option>
+                        <option Country="GQ" value="240">Equatorial Guinea (+240)</option>
+                        <option Country="ER" value="291">Eritrea (+291)</option>
+                        <option Country="EE" value="372">Estonia (+372)</option>
+                        <option Country="ET" value="251">Ethiopia (+251)</option>
+                        <option Country="FK" value="500">Falkland Islands (+500)</option>
+                        <option Country="FO" value="298">Faroe Islands (+298)</option>
+                        <option Country="FJ" value="679">Fiji (+679)</option>
+                        <option Country="FI" value="358">Finland (+358)</option>
+                        <option Country="FR" value="33">France (+33)</option>
+                        <option Country="GF" value="594">French Guiana (+594)</option>
+                        <option Country="PF" value="689">French Polynesia (+689)</option>
+                        <option Country="GA" value="241">Gabon (+241)</option>
+                        <option Country="GM" value="220">Gambia (+220)</option>
+                        <option Country="GE" value="7880">Georgia (+7880)</option>
+                        <option Country="DE" value="49">Germany (+49)</option>
+                        <option Country="GH" value="233">Ghana (+233)</option>
+                        <option Country="GI" value="350">Gibraltar (+350)</option>
+                        <option Country="GR" value="30">Greece (+30)</option>
+                        <option Country="GL" value="299">Greenland (+299)</option>
+                        <option Country="GD" value="1473">Grenada (+1473)</option>
+                        <option Country="GP" value="590">Guadeloupe (+590)</option>
+                        <option Country="GU" value="671">Guam (+671)</option>
+                        <option Country="GT" value="502">Guatemala (+502)</option>
+                        <option Country="GN" value="224">Guinea (+224)</option>
+                        <option Country="GW" value="245">Guinea - Bissau (+245)</option>
+                        <option Country="GY" value="592">Guyana (+592)</option>
+                        <option Country="HT" value="509">Haiti (+509)</option>
+                        <option Country="HN" value="504">Honduras (+504)</option>
+                        <option Country="HK" value="852">Hong Kong (+852)</option>
+                        <option Country="HU" value="36">Hungary (+36)</option>
+                        <option Country="IS" value="354">Iceland (+354)</option>
+                        <option Country="IN" value="91">India (+91)</option>
+                        <option Country="ID" value="62">Indonesia (+62)</option>
+                        <option Country="IR" value="98">Iran (+98)</option>
+                        <option Country="IQ" value="964">Iraq (+964)</option>
+                        <option Country="IE" value="353">Ireland (+353)</option>
+                        <option Country="IL" value="972">Israel (+972)</option>
+                        <option Country="IT" value="39">Italy (+39)</option>
+                        <option Country="JM" value="1876">Jamaica (+1876)</option>
+                        <option Country="JP" value="81">Japan (+81)</option>
+                        <option Country="JO" value="962">Jordan (+962)</option>
+                        <option Country="KZ" value="7">Kazakhstan (+7)</option>
+                        <option Country="KE" value="254">Kenya (+254)</option>
+                        <option Country="KI" value="686">Kiribati (+686)</option>
+                        <option Country="KP" value="850">Korea North (+850)</option>
+                        <option Country="KR" value="82">Korea South (+82)</option>
+                        <option Country="KW" value="965">Kuwait (+965)</option>
+                        <option Country="KG" value="996">Kyrgyzstan (+996)</option>
+                        <option Country="LA" value="856">Laos (+856)</option>
+                        <option Country="LV" value="371">Latvia (+371)</option>
+                        <option Country="LB" value="961">Lebanon (+961)</option>
+                        <option Country="LS" value="266">Lesotho (+266)</option>
+                        <option Country="LR" value="231">Liberia (+231)</option>
+                        <option Country="LY" value="218">Libya (+218)</option>
+                        <option Country="LI" value="417">Liechtenstein (+417)</option>
+                        <option Country="LT" value="370">Lithuania (+370)</option>
+                        <option Country="LU" value="352">Luxembourg (+352)</option>
+                        <option Country="MO" value="853">Macao (+853)</option>
+                        <option Country="MK" value="389">Macedonia (+389)</option>
+                        <option Country="MG" value="261">Madagascar (+261)</option>
+                        <option Country="MW" value="265">Malawi (+265)</option>
+                        <option Country="MY" value="60">Malaysia (+60)</option>
+                        <option Country="MV" value="960">Maldives (+960)</option>
+                        <option Country="ML" value="223">Mali (+223)</option>
+                        <option Country="MT" value="356">Malta (+356)</option>
+                        <option Country="MH" value="692">Marshall Islands (+692)</option>
+                        <option Country="MQ" value="596">Martinique (+596)</option>
+                        <option Country="MR" value="222">Mauritania (+222)</option>
+                        <option Country="YT" value="269">Mayotte (+269)</option>
+                        <option Country="MX" value="52">Mexico (+52)</option>
+                        <option Country="FM" value="691">Micronesia (+691)</option>
+                        <option Country="MD" value="373">Moldova (+373)</option>
+                        <option Country="MC" value="377">Monaco (+377)</option>
+                        <option Country="MN" value="976">Mongolia (+976)</option>
+                        <option Country="MS" value="1664">Montserrat (+1664)</option>
+                        <option Country="MA" value="212">Morocco (+212)</option>
+                        <option Country="MZ" value="258">Mozambique (+258)</option>
+                        <option Country="MN" value="95">Myanmar (+95)</option>
+                        <option Country="NA" value="264">Namibia (+264)</option>
+                        <option Country="NR" value="674">Nauru (+674)</option>
+                        <option Country="NP" value="977">Nepal (+977)</option>
+                        <option Country="NL" value="31">Netherlands (+31)</option>
+                        <option Country="NC" value="687">New Caledonia (+687)</option>
+                        <option Country="NZ" value="64">New Zealand (+64)</option>
+                        <option Country="NI" value="505">Nicaragua (+505)</option>
+                        <option Country="NE" value="227">Niger (+227)</option>
+                        <option Country="NG" value="234">Nigeria (+234)</option>
+                        <option Country="NU" value="683">Niue (+683)</option>
+                        <option Country="NF" value="672">Norfolk Islands (+672)</option>
+                        <option Country="NP" value="670">Northern Marianas (+670)</option>
+                        <option Country="NO" value="47">Norway (+47)</option>
+                        <option Country="OM" value="968">Oman (+968)</option>
+                        <option Country="PW" value="680">Palau (+680)</option>
+                        <option Country="PA" value="507">Panama (+507)</option>
+                        <option Country="PG" value="675">Papua New Guinea (+675)</option>
+                        <option Country="PY" value="595">Paraguay (+595)</option>
+                        <option Country="PE" value="51">Peru (+51)</option>
+                        <option Country="PH" value="63">Philippines (+63)</option>
+                        <option Country="PL" value="48">Poland (+48)</option>
+                        <option Country="PT" value="351">Portugal (+351)</option>
+                        <option Country="PR" value="1787">Puerto Rico (+1787)</option>
+                        <option Country="QA" value="974">Qatar (+974)</option>
+                        <option Country="RE" value="262">Reunion (+262)</option>
+                        <option Country="RO" value="40">Romania (+40)</option>
+                        <option Country="RU" value="7">Russia (+7)</option>
+                        <option Country="RW" value="250">Rwanda (+250)</option>
+                        <option Country="SM" value="378">San Marino (+378)</option>
+                        <option Country="ST" value="239">Sao Tome &amp; Principe (+239)</option>
+                        <option Country="SA" value="966">Saudi Arabia (+966)</option>
+                        <option Country="SN" value="221">Senegal (+221)</option>
+                        <option Country="CS" value="381">Serbia (+381)</option>
+                        <option Country="SC" value="248">Seychelles (+248)</option>
+                        <option Country="SL" value="232">Sierra Leone (+232)</option>
+                        <option Country="SG" value="65">Singapore (+65)</option>
+                        <option Country="SK" value="421">Slovak Republic (+421)</option>
+                        <option Country="SI" value="386">Slovenia (+386)</option>
+                        <option Country="SB" value="677">Solomon Islands (+677)</option>
+                        <option Country="SO" value="252">Somalia (+252)</option>
+                        <option Country="ZA" value="27">South Africa (+27)</option>
+                        <option Country="ES" value="34">Spain (+34)</option>
+                        <option Country="LK" value="94">Sri Lanka (+94)</option>
+                        <option Country="SH" value="290">St. Helena (+290)</option>
+                        <option Country="KN" value="1869">St. Kitts (+1869)</option>
+                        <option Country="SC" value="1758">St. Lucia (+1758)</option>
+                        <option Country="SD" value="249">Sudan (+249)</option>
+                        <option Country="SR" value="597">Suriname (+597)</option>
+                        <option Country="SZ" value="268">Swaziland (+268)</option>
+                        <option Country="SE" value="46">Sweden (+46)</option>
+                        <option Country="CH" value="41">Switzerland (+41)</option>
+                        <option Country="SI" value="963">Syria (+963)</option>
+                        <option Country="TW" value="886">Taiwan (+886)</option>
+                        <option Country="TJ" value="7">Tajikstan (+7)</option>
+                        <option Country="TH" value="66">Thailand (+66)</option>
+                        <option Country="TG" value="228">Togo (+228)</option>
+                        <option Country="TO" value="676">Tonga (+676)</option>
+                        <option Country="TT" value="1868">Trinidad &amp; Tobago (+1868)</option>
+                        <option Country="TN" value="216">Tunisia (+216)</option>
+                        <option Country="TR" value="90">Turkey (+90)</option>
+                        <option Country="TM" value="7">Turkmenistan (+7)</option>
+                        <option Country="TM" value="993">Turkmenistan (+993)</option>
+                        <option Country="TC" value="1649">Turks &amp; Caicos Islands (+1649)</option>
+                        <option Country="TV" value="688">Tuvalu (+688)</option>
+                        <option Country="UG" value="256">Uganda (+256)</option>
+                        <option Country="GB" value="44">UK (+44)</option>
+                        <option Country="UA" value="380">Ukraine (+380)</option>
+                        <option Country="AE" value="971">United Arab Emirates (+971)</option>
+                        <option Country="UY" value="598">Uruguay (+598)</option>
+                        <option Country="US" value="1">USA (+1)</option>
+                        <option Country="UZ" value="7">Uzbekistan (+7)</option>
+                        <option Country="VU" value="678">Vanuatu (+678)</option>
+                        <option Country="VA" value="379">Vatican City (+379)</option>
+                        <option Country="VE" value="58">Venezuela (+58)</option>
+                        <option Country="VN" value="84">Vietnam (+84)</option>
+                        <option Country="VG" value="84">Virgin Islands - British (+1284)</option>
+                        <option Country="VI" value="84">Virgin Islands - US (+1340)</option>
+                        <option Country="WF" value="681">Wallis &amp; Futuna (+681)</option>
+                        <option Country="YE" value="969">Yemen (North)(+969)</option>
+                        <option Country="YE" value="967">Yemen (South)(+967)</option>
+                        <option Country="ZM" value="260">Zambia (+260)</option>
+                        <option Country="ZW" value="263">Zimbabwe (+263)</option>
+                    </select>
+                </div>
+                <div class="col-md-8">
+                    <input style="border-radius: 4px; margin: 24px 0px 6px 0px;" type='tel' name='Phone' id="Phone" placeholder="1234567890" required />
+                </div>
+            </div>
+
+            <div class="contact-us row">
+                <div class="col-md-12">
+                    <label>
+                        <span class="txt">Message / Requirement<span class="asterisk">*</span>
+                        </span>
+                    </label>
+                    <textarea style="margin: 8px 0px 0px 0px; border-radius: 4px;" rows="4" name="Description" id="Description" placeholder="Write your message here" required /></textarea>
+			<div class="g-recaptcha" data-sitekey="6LdrupcgAAAAABhk7e_sUb-0YEqznpMbfC-VVl2m"></div>              
+  	        </div>
+            </div>
+
+            <input class="button btn btn-primary btn-lg" id="formsubmit" type="submit" value="Submit" />
+            <div class='zcwf_col_fld'>
+                <script>
+                    function validateEmail329181000000257001() {
+                        var form = document.forms['WebToLeads329181000000257001'];
+                        var emailFld = form.querySelectorAll('[ftype=email]');
+                        var i;
+                        for (i = 0; i < emailFld.length; i++) {
+                            var emailVal = emailFld[i].value;
+                            if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
+                                var atpos = emailVal.indexOf('@');
+                                var dotpos = emailVal.lastIndexOf('.');
+                                if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+                                    alert('Please enter a valid email address. ');
+                                    emailFld[i].focus();
+                                    return false;
+                                }
+                            }
+                        }
+                        return true;
+                    }
+
+                    function checkMandatory329181000000257001() {
+                        var mndFileds = new Array('Last Name', 'Email');
+                        var fldLangVal = new Array('Your\x20Name', 'Company\x20Email');
+                        for (i = 0; i < mndFileds.length; i++) {
+                            var fieldObj = document.forms['WebToLeads329181000000257001'][mndFileds[i]];
+                            if (fieldObj) {
+                                if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
+                                    if (fieldObj.type == 'file') {
+                                        alert('Please select a file to upload.');
+                                        fieldObj.focus();
+                                        return false;
+                                    }
+                                    alert(fldLangVal[i] + ' cannot be empty.');
+                                    fieldObj.focus();
+                                    return false;
+                                } else if (fieldObj.nodeName == 'SELECT') {
+                                    if (fieldObj.options[fieldObj.selectedIndex].value == '-None-') {
+                                        alert(fldLangVal[i] + ' cannot be none.');
+                                        fieldObj.focus();
+                                        return false;
+                                    }
+                                } else if (fieldObj.type == 'checkbox') {
+                                    if (fieldObj.checked == false) {
+                                        alert('Please accept  ' + fldLangVal[i]);
+                                        fieldObj.focus();
+                                        return false;
+                                    }
+                                }
+                                try {
+                                    if (fieldObj.name == 'Last Name') {
+                                        name = fieldObj.value;
+                                    }
+                                } catch (e) {}
+                            }
+                        }
+                        trackVisitor329181000000257001();
+                        if (!validateEmail329181000000257001()) {
+                            return false;
+                        }
+                        document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled', true);
+                    }
+
+                    function tooltipShow329181000000257001(el) {
+                        var tooltip = el.nextElementSibling;
+                        var tooltipDisplay = tooltip.style.display;
+                        if (tooltipDisplay == 'none') {
+                            var allTooltip = document.getElementsByClassName('zcwf_tooltip_over');
+                            for (i = 0; i < allTooltip.length; i++) {
+                                allTooltip[i].style.display = 'none';
+                            }
+                            tooltip.style.display = 'block';
+                        } else {
+                            tooltip.style.display = 'none';
+                        }
+                    }
+                </script>
+                <script type='text/javascript' id='VisitorTracking'>
+                    var $zoho = $zoho || {};
+                    $zoho.salesiq = $zoho.salesiq || {
+                        widgetcode: '5df7e7831b236fcc065778ecb30ce63a842ed86f15ff1ace3e8f57da0ca4bedc',
+                        values: {},
+                        ready: function() {}
+                    };
+                    var d = document;
+                    s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.id = 'zsiqscript';
+                    s.defer = true;
+                    s.src = 'https://salesiq.zoho.in/widget';
+                    t = d.getElementsByTagName('script')[0];
+                    t.parentNode.insertBefore(s, t);
+
+                    function trackVisitor329181000000257001() {
+                        try {
+                            if ($zoho) {
+                                var LDTuvidObj = document.forms['WebToLeads329181000000257001']['LDTuvid'];
+                                if (LDTuvidObj) {
+                                    LDTuvidObj.value = $zoho.salesiq.visitor.uniqueid();
+                                }
+                                var firstnameObj = document.forms['WebToLeads329181000000257001']['First Name'];
+                                if (firstnameObj) {
+                                    name = firstnameObj.value + ' ' + name;
+                                }
+                                $zoho.salesiq.visitor.name(name);
+                                var emailObj = document.forms['WebToLeads329181000000257001']['Email'];
+                                if (emailObj) {
+                                    email = emailObj.value;
+                                    $zoho.salesiq.visitor.email(email);
+                                }
+                            }
+                        } catch (e) {}
+                    }
+                </script>
+                <!-- Do not remove this --- Analytics Tracking code starts -->
+                <script id='wf_anal' src='https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=11d2381a628d4e940a5dcf2b3cf079bacdbef2105b8a2867d53fa4a03cc6ccb3gid6cd952f3e5be67584d0644fe79b8ff8fea78abdc9f436bd23b83e47605cabebdgid534cb20477b1d28b5f45f7cc241888c5gid4ee3a7e9ace6ab1be7c541b329164307&tw=096a715cbfc30dc79d6dc215bf71c5b4284d938378e51186a6daa9337f7519a8'></script>
+                <!-- Do not remove this --- Analytics Tracking code ends. -->
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    @media (max-width: 768px) {
+        input#go {
+            margin: 3% 0% 4% 33% !important;
+        }
+    }
+
+    .modal-content {
+        box-shadow: 0px 2px 2px rgb(0 0 0 / 8%);
+        border-radius: 4px;
+        background: #f0f6ff;
+    }
+
+    .col-md-6.pop-title {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #1d3f75;
+        padding: 0% 0% 6% 0%;
+    }
+
+    span.asterisk {
+        color: red;
+    }
+
+    span.col-md-12.txt {
+        color: #204d93;
+        margin: 0px;
+    }
+
+    span.txt {
+        color: #204d93;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .modal-title {
+        display: none;
+    }
+
+    input#go {
+        margin: 2% 0% 2% 37%;
+        background: #e08222;
+        border: #e08222;
+        padding: 9px 28px 9px 28px;
+        font-size: 18px
+    }
+
+    button.action.add-to-demo {
+        background: #EF8321;
+        border-radius: 4px;
+    }
+
+    .modal-header .close {
+        padding: 1rem;
+        margin: 0rem 0rem 0rem auto;
+        border-radius: 70%;
+    }
+
+    button.close {
+        backgound-color: unset !important;
+    }
+
+    button.close {
+        border-radius: 90%;
+        padding: -2.5em;
+        width: -4px;
+        height: 41px;
+    }
+</style>
+

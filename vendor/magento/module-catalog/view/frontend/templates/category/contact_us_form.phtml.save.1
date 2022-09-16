@@ -1,0 +1,124 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<div class="contact-us-page">
+
+    <div class="row form-contact">
+        <div class="col-lg-6 col-md-6">
+            <div class="content-catalog-contact">Why DC Gears?
+                <div class="content-catalog-paragraph"><p>DC Gears is a global leader in Data Centers, CyberSecurity, Virtualization, Cloud Computing, NAS Storage, Servers, Network Security, and KVM switches.</p>We are a pioneer in the integration of IT solutions attributable to our extensive vendor-neutral partnerships. Our solutions encompass greenfield and brownfield projects from the ground up, as well as existing IT system upgrades and modernization.<p></p><p></p>
+                    <div class="content-catalog-points">
+                        <ul><li class="points">Lorem ipsum dolor sit amet, consetetur</li></ul>
+                        <ul><li class="points">Lorem ipsum dolor sit amet, consetetur</li></ul>
+                        <ul><li class="points">Lorem ipsum dolor sit amet, consetetur</li></ul>
+                    </div>
+                </div>
+            </div>         
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+            <div class="catalog-contact">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-5 col-md-5 catalog-content-title">Drop us a line</div>
+                    <div class="col-lg-5 col-md-5"></div>
+                    <div class="col-lg-1 col-md-1"></div>
+                </div>
+                <form action='https://dcgears.com/'>
+                <div class="catalog-contact-us row">
+                        <label><span class="col-lg-12 col-md-12 catalog-txt">Your Name<span class="asterisk">*</span></span></label>
+                        <input style= "border-radius: 4px;   margin: 8px 50.5px 8px 50.5px;" type="text" name="name" id="name" placeholder="Ex. John Doe" required/> 
+
+                        <label><span class=" col-lg-12 col-md-12 catalog-txt">Company Email<span class="asterisk">*</span></span></label>
+                        <input style= "border-radius: 4px;   margin: 8px 50.5px 8px 50.5px;" type="email" name="email" id="email" placeholder="Ex. john.doe@example.com" required/>
+                </div>
+
+                <div class="catalog-column-combine row">
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-4 col-md-4">
+                        <label><span class="catalog-txt">Contact No<span class="asterisk">*</span></span></label>
+                            <select style="border-radius: 4px; color: #666;" id="country" name='country' placeholder="Country.." required/>
+                                <option value='' selected=''>Country Code</option>
+                                <option value="us"> &#x1F1FA;&#x1F1F8; United States</option>
+                                <option value="uk"> &#x1F1EC;&#x1F1E7; United Kingdom</option>
+                                <option value="in"> &#x1F1EE;&#x1F1F3; India</option>
+                                <option value="au"> &#x1F1E6;&#x1F1FA; Australia</option>
+                                <option value="sg"> &#x1F1F8;&#x1F1EC; Singapore</option>
+                                <option value="eu"> &#x1F1EA;&#x1F1FA; Europe</option>                
+                            </select>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                            <input style= "border-radius: 4px; margin: 17px 0px 5px 0px;" type='tel' pattern='^\+?\d{10,13}' name='phone' id="phone" placeholder="1234567890" required/>
+                    </div>
+                    <div class="col-lg-1 col-md-1"></div>
+                </div>
+
+                <div class="contact-us row">
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-10 col-md-10">
+                        <label><span class="catalog-txt">Message/ Requirement<span class="asterisk">*</span></span></label>
+                        <textarea style="margin: 8px 0px 0px 0px; border-radius: 4px;" rows="7" name="message" id="message"placeholder="Write your message here"required/></textarea>
+                    </div>
+                    <div class="col-lg-1 col-md-1"></div>
+                </div>
+
+                <input class="button btn btn-primary btn-lg" id="go" type="submit" value="Submit" />
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.content-catalog-contact {
+    height: 102%;
+    background-color: rgba(32, 77, 147, 0.11);
+    padding: 6%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d3f75;
+    width: 450px;
+}
+.catalog-contact {
+    height: 102%;
+    background-color: rgba(253, 161, 36, 0.16);
+    width: 450px;
+}
+.content-catalog-paragraph {
+    font-size: 13px;
+    padding: 3% 0% 0% 0%;
+    font-weight: 500;
+}
+li.points {
+    list-style-type: square;
+}
+.content-catalog-points {
+    margin: 5%;
+}
+.col-lg-5.col-md-5.catalog-content-title {
+    margin: 5% 0% 3% 0%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d3f75;
+}
+span.col-lg-12.col-md-12.catalog-txt {
+    margin: 37px;
+    color: #204d93;
+}
+span.asterisk {
+  color: red;
+}
+span.catalog-txt {
+    color: #204d93;
+}
+input#go {
+    margin: 3% 0% 0% 41%;
+    background: #e08222;
+    border: #e08222;
+    padding: 9px 19px 9px 19px;
+}
+</style>

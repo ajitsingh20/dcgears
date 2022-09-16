@@ -1,0 +1,647 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();        
+$storeManager  = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$storeCode  = $storeManager->getStore()->getCode();
+
+?>
+<div class="contact-us-page">
+    <div class="col-lg-4 col-md-40">
+        <div class="contact-title-top"><h2>Let's Talk</h2></div>
+       <div class="contact-paragraph">To request a quote or to ask for a free demo and infrastructure assessment fill out the form and our DC expert will get back to you in no time with a perfectly tailored solution for your requirement.</div>
+            <div class="contactus">
+                <form action='https://dcgears.com/' method="POST">
+
+                    <div class="form-field">
+                        <label><span class="txt">Your Name<span class="asterisk">*</span></span></label>
+                        <input style= "border-radius: 4px;   margin: 8px 15.3px 9px 13.5px;
+                        padding: 6px 233px 6px 10px;" type="text" name="name" id="name" placeholder="Ex. John Doe" required/>
+                    </div>
+
+                    <div class="form-field">
+                        <label><span class="txt">Company Email<span class="asterisk">*</span></span></label>
+                        <input style= "border-radius: 4px;   margin: 8px 15.3px 9px 13.5px;" type="email" name="email" id="email" placeholder="Ex. john.doe@example.com" required/>
+                    </div>
+            </div>
+
+                    <div class="form-field row">
+                        <div class="col-md-4">
+                            <label><span class="ttxt">Contact No<span class="asterisk">*</span></span></label>
+                            <select style="border-radius: 4px; color: #666; margin: -3px 3px -4px 12px; padding: 0px 0px 0px 3px;" id="country" name='country' placeholder="Country.." required/>
+                                <option value='' selected=''>Country Code</option>
+                                <option value="us"> &#x1F1FA;&#x1F1F8; United States</option>
+                                <option value="uk"> &#x1F1EC;&#x1F1E7; United Kingdom</option>
+                                <option value="in"> &#x1F1EE;&#x1F1F3; India</option>
+                                <option value="au"> &#x1F1E6;&#x1F1FA; Australia</option>
+                                <option value="sg"> &#x1F1F8;&#x1F1EC; Singapore</option>
+                                <option value="eu"> &#x1F1EA;&#x1F1FA; Europe</option>                
+                            </select>
+                        </div>
+                        <div class="col-md-8">
+                            <input style= "border-radius: 4px; margin: 20px 0px 6px 13px;" type='tel' pattern='^\+?\d{10,13}' name='phone' id="phone" placeholder="1234567890" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label><span class="txt">Message/ Requirement<span class="asterisk">*</span></span></label>
+                        <textarea style= "margin: 1px 15.3px 17.5px 13.5px; padding: 6px 170px 81px 10px;
+                        border-radius: 4px;" rows="5" name="message" id="message"placeholder="Write your message here"required/></textarea>
+                    </div>
+
+                    <input style="margin: 0px 0px 0px 134.5px; padding: 12.5px 36.5px 11px; border-radius: 3px; background: #e08222; border: antiquewhite;"class="button btn btn-primary btn-lg" id="gosubmit" type="submit" value="Submit" />
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="contact-details-info">
+            <div class="contact-info">
+                <div class="contact-title-down">Our offices around the globe</div>
+                    <p class="contact-title-down-paragraph">With offices and warehouses in more than 33 countries and physical presence in 40+ locations DC Gears have the ability to deliver IT solutions across the globe.</p>
+            </div>
+            <div class="country-1 <?= ($storeCode === 'us') ? 'activein' : '' ?>">  
+            <div class="country-title-1 country-label">United States</div>
+            <div class="country-desc <?= ($storeCode === 'us') ? '' : 'inactive' ?>">
+            <div class="country-details-1-1">
+                <span class="country-details-title">Hayward</span>
+                <p class="country-details-content">21053 Alexander Ct Unit C,<br> Hayward, CA 94545 USA<br> sales@dcgears.com</p></div>
+            <div class="country-details-1-2">
+                <span class="country-details-title">Virginia</span>
+                <p class="country-details-content">Rahi Systems Federal LLC 7760 Doane<br> Dr Building F Historic District,<br> Manassas,VA 20109., USA<br> sales@dcgears.com</p></div>
+            <div class="country-details-1-3">
+                <span class="country-details-title">Reno</span>
+                <p class="country-details-content">Rahi Systems Inc 4670<br> Aircenter Circle Reno NV 89502, USA<br> sales@dcgears.com</p></div>
+            </div>
+            </div>
+            <div class="country-2 <?= ($storeCode === 'in') ? 'activein' : '' ?>">
+            <div class="country-title-2 country-label">India</div>
+            <div class="country-desc <?= ($storeCode === 'in') ? '' : 'inactive' ?>">
+            <div class="country-details-2-1">
+                <span class="country-details-title">Pune</span>
+                <p class="country-details-content">#3 Pride Portal,<br> Shivaji Housing Society,<br> Shivaji Nagar, Pune-411016<br> sales@dcgears.com</p></div>
+            <div class="country-details-2-2">
+                <span class="country-details-title">Mumbai</span>
+                <p class="country-details-content">Office no 709,<br> The Summit-Business Bay,<br> Andheri-Kurla Road, Mumbai-400093<br> sales@dcgears.com</p></div>
+            <div class="country-details-2-3">
+                <span class="country-details-title">Bangalore</span>
+                <p class="country-details-content">#77, 3rd Cross,<br> 1st Floor Spin Building,<br> Residency Road, Bangalore-560025<br> sales@dcgears.com</p></div>
+            </div>
+            </div>
+            <div class="country-3 <?= ($storeCode === 'au') ? 'activein' : '' ?>">
+            <div class="country-title-3 country-label">Australia</div>
+            <div class="country-desc <?= ($storeCode === 'au') ? '' : 'inactive' ?>">
+            <div class="country-details-3-1">
+                <span class="country-details-title">Sydney</span>
+                <p class="country-details-content">Unit 30, Slough Business Park,<br> 2 Slough Ave,Silverwater<br> NSW 2128 Australia<br> sales@dcgears.com</p></div>
+            <div class="country-details-3-2">
+                <span class="country-details-title">Melbourne</span>
+                <p class="country-details-content">Unit 56/148 Chesterville Rd,<br> Cheltenham VIC 3192<br> sales@dcgears.com</p></div>
+            </div>
+            </div>
+            <div class="country-4 <?= ($storeCode === 'eu') ? 'activein' : '' ?>">
+            <div class="country-title-4 country-label">Europe</div>
+            <div class="country-desc <?= ($storeCode === 'eu') ? '' : 'inactive' ?>">
+            <div class="country-details-4-1">
+                <span class="country-details-title">Ireland</span>
+                <p class="country-details-content">Rahi Technologies Ltd. Robe House,<br> Cloughkeating Avenue Raheen Business Park, Ireland<br> sales@dcgears.com</p></div>
+            <div class="country-details-4-2">
+                <span class="country-details-title">Netherlands</span>
+                <p class="country-details-content">Rahi Jacobus Spijkerdreef <br> Hoofddrorp. The Netherlands 2132PZ<br> sales@dcgears.com</p></div>
+            <div class="country-details-4-3">
+                <span class="country-details-title">Germany</span>
+                <p class="country-details-content">Rahi System GmbH, Munchner StraBe<br> 2085774 Unterfohring Munich<br> sales@dcgears.com</p></div>
+            </div>
+            </div>
+            <div class="country-5 <?= ($storeCode === 'apac') ? 'activein' : '' ?>">
+            <div class="country-title-5 country-label">APAC</div>
+            <div class="country-desc <?= ($storeCode === 'apac') ? '' : 'inactive' ?>">
+            <div class="country-details-5-1">
+                <span class="country-details-title">Shanghai</span>
+                <p class="country-details-content">Shanghai Ruiji Technology Co. Ltd.<br> International Plaza Tower<br> Xuhui, Shanghai, China 200235<br> sales@dcgears.com</p></div>
+            <div class="country-details-5-2">
+                <span class="country-details-title">Beijing</span>
+                <p class="country-details-content">Donghuang Building 17th Floor, No.16,<br> South Guangshun Street, Chaoyang District, Beijing, China<br> sales@dcgears.com</p></div>
+            <div class="country-details-5-3">
+                <span class="country-details-title">Shenzhen</span>
+                <p class="country-details-content">Unit 1109, Building A,<br> Logan Century, 23 Haixiu Road, <br>Bao'an District, Shenzhen 518101<br> sales@dcgears.com</p></div>
+            </div>
+            </div>
+            <div class="country-6 <?= ($storeCode === 'mea') ? 'activein' : '' ?>">
+            <div class="country-title-6 country-label">MEA</div>
+            <div class="country-desc <?= ($storeCode === 'mea') ? '' : 'inactive' ?>">
+            <div class="country-details-6-1">
+                <span class="country-details-title"></span>
+                <p class="country-details-content"></p></div>
+            <div class="country-details-6-2">
+                <span class="country-details-title">South Africa</span>
+                <p class="country-details-content">Rahi System South Africa <br>(Pty) Ltd Unit3, Stellenbosch.Western Cape, 7600<br> sales@dcgears.com</p></div>
+            <div class="country-details-6-3">
+                <span class="country-details-title"></span>
+                <p class="country-details-content"></p></div>
+            </div>
+            </div>
+            <div class="country-7 <?= ($storeCode === 'uae') ? 'active' : '' ?>">
+            <div class="country-title-7 country-label">UAE</div>
+            <div class="country-desc <?= ($storeCode === 'uae') ? '' : 'inactive' ?>">
+            <div class="country-details-7-1">
+                <span class="country-details-title"></span>
+                <p class="country-details-content"></p></div>
+            <div class="country-details-7-2">
+                <span class="country-details-title">Dubai</span>
+                <p class="country-details-content">Rahi IT Infrastructure L.L.C. <br>The Citadel Tower, Al Abrej Street, Business Bay,5586, Dubai, UAE<br> sales@dcgears.com</p></div>
+            <div class="country-details-7-3">
+                <span class="country-details-title"></span>
+                <p class="country-details-content"></p></div>
+            </div>  
+            </div>    
+        </div>  
+</div>
+    <div class="vll"></div>
+    <div class="coll-google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402891185415!2d144.95373631585633!3d-37.817209742014676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1svi!2s!4v1527494727294" width="400" height="300" frameborder="0" allowfullscreen=""></iframe></div>
+        <div class="contact-infoo">
+            <div class="contact-content">
+                    <ul class="address-info">
+                    <li class="add-icon"><img src="http://34.127.80.155/dcgears/media/catalog/menu_icon/kvm_switches/Headquarters.svg" class="img-cat-iconn" alt=""><span class="head-title">Headquarter</span></li><a class="text-space">Rahi Systems Inc. 48303 Fremont Blvd,
+                    CA 94538 USA</a>
+                    <hr class="new1">
+                    <li class="img-cat-iconn"><img src="http://34.127.80.155/dcgears/media/catalog/menu_icon/kvm_switches/Email.svg" class="img-cat-iconn" alt=""><span class="head-title">Email Address</span></li><a class="text-space" title="Send Email" href="mailto:sales@dcgears.com">sales@dcgears.com</a>
+                    <hr class="new1">
+                    <li class="img-cat-iconn"><img src="http://34.127.80.155/dcgears/media/catalog/menu_icon/kvm_switches/Call_information.svg" class="img-cat-iconn" alt=""><span class="head-title">Call Information</span></li><a class="text-space" title="Call" href="tel:(+1) 510 651 2205">(+1) 510 651 2205</a>
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+<style>
+span.ttxt {
+    font-size: 128%;
+    color: #204d93;
+    padding: 0px 0px 0px 16px;
+}
+.combine {
+  column-count: 2;
+  column-gap: 20px;
+}
+.contact-paragraph {
+  padding: 4%;
+  font-size: 13px;
+  color: #204d93;
+  width: 108%;
+}
+span.asterisk {
+  color: red;
+}
+hr.new1 {
+  border-top: 1px solid #d5e3f1;
+  width: 390px;
+}
+a.text-space {
+    padding: 38px;
+    font-size: 14px;
+}
+span.head-title {
+    padding: 13px;
+    font-size: 18px;
+    font-weight: bold;
+}
+img.img-cat-iconn {
+    width: 5%;
+}
+.contact-infoo {
+    margin: -700px 60px 0px 730px;
+    height: 203px;
+    width: 466px;
+}
+.country-details-7-1 {
+  width: 280px;
+  height: 150px;
+  margin: 36px 0px 0px -707px;
+  background-color: #fff;
+  text-align: center;
+}
+.country-details-7-2 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px -556px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-7-3 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px -49px;
+  background-color: #fff;
+  float: left;
+  text-align: center;
+}
+.country-details-6-1 {
+  width: 280px;
+  height: 150px;
+  margin: 36px 0px 0px -707px;
+  background-color: #fff;
+  text-align: center;
+}
+.country-details-6-2 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px -390px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-6-3 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px -49px;
+  background-color: #fff;
+  float: left;
+  text-align: center;
+}
+.country-details-5-1 {
+  width: 280px;
+  height: 150px;
+  margin: 36px 0px 0px -560px;
+  background-color: #F9f9f9;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-5-2 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px -219px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-5-3 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px 123px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-4-1 {
+  width: 280px;
+  height: 150px;
+  margin: 36px 0px 0px -404px;
+  background-color: #F9f9f9;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-4-2 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px -50px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-4-3 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px 295px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-3-1 {
+  width: 280px;
+  height: 150px;
+  margin: 36px 0px 0px -96px;
+  background-color: #F9f9f9;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-3-2 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px 267px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-2-1 {
+  width: 280px;
+  height: 150px;
+  margin: 36px 0px 0px -96px;
+  background-color: #F9f9f9;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-2-2 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px 251px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-2-3 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px 604px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center; 
+}
+p.country-details-content {
+    color: #2a4a7d;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+span.country-details-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2a4a7d;
+    margin: 10px;
+}
+.country-details-1-1 {
+  width: 280px;
+  height: 150px;
+  margin: 36px 0px 0px 58px;
+  background-color: #F9f9f9;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-1-2 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px 410px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.country-details-1-3 {
+  width: 280px;
+  height: 150px;
+  margin: -150px 0px 0px 758px;
+  background-color: #F9f9f9;
+  float: left;
+  box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+  border-radius: 11.2373px;
+  text-align: center;
+}
+.inactive {
+    display: none;
+}
+.active {
+    background-color: #d5e3f1;
+}
+.country-1 {
+  width: 150.5px;
+  height: 41px;
+  border-radius: 7px;
+  border: solid 1px #d5e3f1;
+}
+.country-2 {
+  width: 150.5px;
+  height: 41px;
+  margin: -41px 0px 0px 168px;
+  border-radius: 7px;
+  border: solid 1px #d5e3f1;
+}
+.country-3 {
+  width: 150.5px;
+  height: 41px;
+  margin: -41px 0px 0px 326px;
+  border-radius: 7px;
+  border: solid 1px #d5e3f1;
+}
+.country-4 {
+  width: 150.5px;
+  height: 41px;
+  margin: -41px 0px 0px 487px;
+  border-radius: 7px;
+  border: solid 1px #d5e3f1;
+}
+.country-5 {
+  width: 150.5px;
+  height: 41px;
+  margin: -41px 0px 0px 646px;
+  border-radius: 7px;
+  border: solid 1px #d5e3f1;
+}
+.country-6 {
+  width: 150.5px;
+  height: 41px;
+  margin: -41px 0px 0px 807px;
+  border-radius: 7px;
+  border: solid 1px #d5e3f1;
+}
+.country-7 {
+  width: 150.5px;
+  height: 41px;
+  margin: -41px 0px 0px 973px;
+  border-radius: 7px;
+  border: solid 1px #d5e3f1;
+}
+.country-title-1 {
+    font-size: 18px;
+    margin: 6px 0px 0px 21px;
+    color: #2a4a7d;
+}
+.country-title-2 {
+    font-size: 18px;
+    margin: 6px 0px 0px 51px;
+    color: #2a4a7d;
+}
+.country-title-3 {
+    font-size: 18px;
+    margin: 6px 0px 0px 41px;
+    color: #2a4a7d;
+}
+.country-title-4 {
+    font-size: 18px;
+    margin: 6px 0px 0px 47px;
+    color: #2a4a7d;
+}
+.country-title-5 {
+    font-size: 18px;
+    margin: 6px 0px 0px 50px;
+    color: #2a4a7d;
+}
+.country-title-6 {
+    font-size: 18px;
+    margin: 6px 0px 0px 55px;
+    color: #2a4a7d;
+}
+.country-title-7 {
+    font-size: 18px;
+    margin: 6px 0px 0px 57px;
+    color: #2a4a7d;
+}
+.coll-google-map {
+    padding: 123px 0px 0px 155px;
+}
+.vll {
+    border-left: 1px solid #d5e3f1;
+    height: 620px;
+    float: left;
+    margin: 85px 0px 0px -625px;
+}
+.contact-title-top {
+    margin: 15px;
+    color: #204d93;
+}
+span.txt {
+    margin: 16px;
+    font-size: 128%;
+    color: #204d93;
+}
+.contact-info {
+    text-align: center;
+    color: #2a4a7d;
+    padding: 50px;
+}
+.contact-title-down {
+    font-size: 27px;
+    font-weight: bold;
+}
+p.contact-title-down-paragraph {
+    font-size: 17px;
+}
+@media(max-width: 768px){
+.contact-info {
+    padding: 0px !important;
+}
+.contact-infoo {
+    margin: 9px 0px 0px 5px !important;
+    height: 245px !important;
+    width: 348px !important;
+}
+.country-1 {
+    width: 50.5px !important;
+    margin: 0px 0px 0px 0px !important;
+}
+.country-details-1-1 {
+    margin: 36px 0px 0px 20px !important;
+}
+.country-details-1-2 {
+    margin: 11px 0px 0px 20px !important;
+}
+.country-details-1-3 {
+    margin: 12px 0px 0px 20px !important;
+}
+.country-2 {
+    width: 50.5px !important;
+    margin: -41px 0px 0px 57px !important;
+}
+.country-details-2-1 {
+    margin: 36px 0px 0px 0px !important;
+}
+.country-details-2-2 {
+    margin: 11px 0px 0px 0px !important;
+}
+.country-details-2-3 {
+    margin: 12px 0px 0px 0px !important;
+}
+.coll-google-map {
+    padding: 16px 225px 0px 0px !important
+}
+.country-3 {
+    width: 50.5px !important;
+    margin: -41px 0px 0px 113px !important;
+}
+.country-4 {
+    width: 50.5px !important;
+    margin: -41px 0px 0px 169px !important;
+}
+.country-5 {
+    width: 50.5px !important;
+    margin: -41px 0px 0px 225px !important;
+}
+.country-6 {
+    width: 50.5px !important;
+    margin: -41px 0px 0px 280px !important;
+}
+.country-7 {
+    width: 50.5px !important;
+    margin: -41px 0px 0px 337px !important;
+}
+.country-title-1 {
+   font-size: 11px !important;
+   margin: 0px 0px 0px 6px !important;
+}
+.country-title-2 {
+    font-size: 11px !important;
+    margin: 0px 0px 0px 11px !important;
+    padding: 9px 0px 0px 0px !important;
+}
+.country-title-3 {
+    font-size: 10px !important;
+    margin: 0px 0px 0px 3px !important;
+    padding: 10px 0px 0px 0px !important;
+}
+.country-title-4 {
+    font-size: 11px !important;
+    margin: 0px 0px 0px 5px !important;
+    padding: 9px 0px 0px 0px !important;
+}
+.country-title-5 {
+    font-size: 11px !important;
+    margin: 0px 0px 0px 11px !important;
+    padding: 10px 0px 0px 0px !important;
+}
+.country-title-6 {
+    font-size: 11px !important;
+    margin: 0px 0px 0px 3px !important;
+    padding: 10px 0px 0px 13px !important;
+}
+.country-title-7 {
+    font-size: 11px !important;
+    margin: 0px 0px 0px 15px !important;
+    padding: 10px 0px 0px 0px !important;
+}
+.contact-us-page {
+    margin: 0px 0px 10px -24px !important;
+}
+}
+</style>
+<script>
+require(['jquery'], function($){
+    $(document).ready(function(){
+        $('.country-label').click(function(){
+            $(".country-label").parent().removeClass("active"); 
+            $(".country-label").siblings('.country-desc').addClass("inactive"); 
+            $(this).siblings('.country-desc').removeClass("inactive");
+            $(this).parent().addClass("active");
+        });
+    });
+});
+</script>

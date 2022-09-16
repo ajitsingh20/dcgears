@@ -1,0 +1,68 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<?php
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId('catalog-partners')
+          ->toHtml();
+?>
+<script>
+require(['jquery', 'owlcarousel'], function($) {
+    $(document).ready(function() {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            navText: [
+                "<i class='fa fa-caret-left'></i>",
+                "<i class='fa fa-caret-right'></i>"
+            ],
+            autoplay: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                  items: 1
+                },
+                600: {
+                  items: 4
+                },
+                1000: {
+                  items: 6
+                }
+            }
+        });
+    });
+});
+
+var config = {
+    paths: {
+        owlcarousel: "RH_OwlSlider/js/owl.carousel"
+    },
+    shim: {
+        owlcarousel: {
+            deps: ['jquery']
+        }
+    }
+};
+</script>
+<style>
+        .partners-catalog {
+        padding-block: 20px;
+        }
+	img.mark-lazys {
+ 	box-shadow: 0px 9px 18px rgb(0 0 0 / 15%);
+   	border-radius: 8px;
+	margin-bottom: 20px;
+	margin-block: 22px;
+        }
+</style>

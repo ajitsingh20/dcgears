@@ -1,0 +1,188 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+
+if($category->getFrontendDesign()) {
+
+    $subcats = $category->getChildrenCategories();
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_baseurl = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue("web/unsecure/base_url");
+
+?>
+
+    <?php if($category->getFrontendDesign() == 1) {  $_subdisplay=0; ?>
+
+        <h4>Recommended Categories</h4><br>
+        <div><span class="Explorecat">Explore All Categories &#x2192;</span></div>
+
+    <div class="visible-cat">
+        <ul class="sub-cat first-cat">
+
+    <?php }?>
+
+
+<?php if($category->getFrontendDesign() == 2) {  ?>
+
+
+       <div class="visible-cat">
+        <ul class="level-2">
+
+    <?php }?>
+
+
+            <?php 
+            foreach ($subcats as $subcat) {
+                $_category = $objectManager->create('Magento\Catalog\Model\Category')->load($subcat->getId());
+                $_outputhelper = $this->helper('Magento\Catalog\Helper\Output');
+                $subcaturl = $subcat->getUrl();
+                $_imgHtml = '';
+                $_customHtml = '';
+		$_imgUrl = $_category->getImageUrl() ? $_category->getImageUrl() : ''; 
+                if ($category->getFrontendDesign() == 1) {
+                    $_categoryClass = 'image page_image_cat';
+                }
+                if ($category->getFrontendDesign() == 2) {
+                    $_categoryClass = 'category_image';
+                    $_customUrl = $_category->getCustomImage() ? $_category->getCustomImage() : '';
+
+                    $_customHtml = '<img class= "category_hover_image category_active" src="' .$_baseurl .$_customUrl . '" />';
+                    $_customHtml = $_outputhelper->categoryAttribute($_category, $_customHtml, 'custom_image');
+
+                }
+                $_imgHtml = '<img class="'.$_categoryClass.'" src="' .$_baseurl .$_imgUrl . '" />';
+
+                $_imgHtml = $_outputhelper->categoryAttribute($_category, $_imgHtml, 'image');
+                ?>
+                <?php if($category->getFrontendDesign() == 1){ ?>
+		     <li class="<?php if($_subdisplay > 4){ echo 'more'; } else { echo 'show'; } ?>">
+                        <a href="<?php echo $subcaturl; ?>" title="<?php echo $subcat->getName(); ?>">
+			<span><?php echo $subcat->getName() ?></span><span class="arrow"> &#x2192;</span>
+			<?php echo $_imgHtml; ?></a>
+                    </li>
+                    <?php if($_subdisplay == 3){ echo '</ul><ul class="lastcat">'; } ?>
+                    <?php if($_subdisplay == 4){ echo '</ul></div><div><ul class="morecat">'; } ?>
+                    <?php
+                    $_subdisplay++; ?>
+                <?php  } ?>
+                <?php if($category->getFrontendDesign() == 2){ ?>
+                    <li>
+			<?php echo $_imgHtml .$_customHtml; ?>  
+                    </li>
+
+		   <a href=" <?php echo $subcaturl; ?> " title=" <?php echo $subcat->getName(); ?>"><span><?php echo $subcat->getName() ?></span></a>                    
+                <?php  } ?>
+
+
+            <?php } ?>  
+
+        </ul>
+    </div>
+
+<?php } ?>
+
+
+    <script>
+        require(['jquery'], function(jQuery) {
+            jQuery('.Explorecat').click(function(){ jQuery('.morecat').toggle();});
+            jQuery('.category_image').hover(function(){ jQuery(this).toggleClass('category_active'); jQuery(this).next('.category_hover_image').toggleClass('category_active');});
+
+        });
+    </script>
+    <style>
+        ul.sub-cat li, ul.morecat, ul.level-2 li {
+            background: #F9f9f9;
+            margin: 0 0 5px 10px;
+            padding: 10px;
+        }
+        ul.morecat {
+            display: none;
+            position: relative;
+            top: 8px;
+            right: 0%;
+            background: #fff;
+            padding: 0px;
+            column-count: 3;
+        }
+        span.Explorecat {
+            text-align: right;
+            display: block;
+            position: relative;
+            top: -35px;
+            color: #FDA124;
+            cursor: pointer;
+        }
+        .category_active {
+            display: none;
+        }
+        ul.sub-cat.first-cat {
+            width: 75%;
+            display: block;
+        }
+        ul.sub-cat.first-cat li {
+            display: inline-block;
+            width: 47%;
+        }
+        li.show a img {
+            width: 50%;
+        }
+        .visible-cat {
+            display: flex;
+        }
+	ul.lastcat {
+            width: 25%;
+        }
+        ul.lastcat {
+            width: 25%;
+            background: #ffffff;
+            padding: 10px;
+        }
+        .visible-cat li{
+            box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+            border-radius: 11.2373px;
+	    text-align: center;
+        }
+	.level-2{
+	    column-count:7;
+	}
+	.level-2 img{
+	    width:50%;
+	}
+	li.more {
+    	    box-shadow: 0px 2.99662px 2.99662px rgb(0 0 0 / 8%);
+   	    border-radius: 11.2373px;
+	    margin: 2px;
+            background: #F9f9f9;
+	    text-align: center;
+	}
+         .category-view {
+            font-size: 15px;
+        }
+	li.more img {
+ 	   width: 180px;
+	}
+	.category-view {
+          font-size: 14px;
+        }
+        a:hover {
+          color: rgb(0 0 0);
+        }
+	span.arrow {
+         color: orange;
+        }
+    </style>
+
+

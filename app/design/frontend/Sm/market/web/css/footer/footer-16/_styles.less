@@ -1,0 +1,145 @@
+// Footer style 16
+.footer-services {
+    background-color: #111;
+    padding: 36px 0 16px;
+
+    .service-item {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .sv-icon {
+        width: 80px;
+    }
+
+    .sv-info {
+        text-transform: uppercase;
+        color: #aaa;
+        padding-top: 5px;
+
+        strong {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.footer-middle {
+    padding: 50px 0;
+    background-color: #f7f7f7;
+
+    .links-footer {
+        float: right;
+        margin-top: 10px;
+
+        ul li {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 40px;
+
+            a {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 114.285%;
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    background-color: #fff;
+    padding: 40px 0;
+
+    address,
+    .address-footer {
+        color: #111;
+    }
+
+    .socials-wrap {
+        .title-follow {
+            display: none;
+        }
+
+        ul {
+            font-size: 0;
+        }
+
+        ul li {
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 10px;
+
+            a {
+                background-color: #3a559f;
+                color: #fff;
+                display: block;
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                font-size: 16px;
+                .border_radius(8px);
+
+                .name-social {
+                    display: none;
+                }
+            }
+
+            &.twitter-social a {
+                background-color: #1da1f2;
+            }
+
+            &.google-social a {
+                background-color: #fa1a25;
+            }
+
+            &.linkedin-social a {
+                background-color: #76909e;
+            }
+
+            &.pinterest-social a {
+                background-color: #ee1111;
+            }
+
+        }
+    }
+
+    .block-subscribe-footer {
+        .title-middle-footer {
+            display: none;
+        }
+
+        .newsletter-content {
+            position: relative;
+        }
+
+        .input-box input {
+            height: 50px;
+            border: 2px solid #eee;
+            padding-left: 15px;
+            .border_radius(8px);
+        }
+
+        .action-button button {
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            padding: 0 !important;
+            background: none !important;
+            color: #111 !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            &:before {
+                .font-awesome(f1d8, 18px);
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
+}

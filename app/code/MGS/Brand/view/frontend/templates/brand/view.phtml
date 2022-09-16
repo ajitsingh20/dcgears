@@ -1,0 +1,20 @@
+<div class="brand-info">
+    <?php echo $block->getChildHtml('brand.image', true); ?>
+    <?php echo $block->getChildHtml('brand.description', true); ?>
+</div>
+<div class="brand-product-list">
+    <?php echo $this->getProductListHtml(); ?>
+</div>
+<style>
+.brand-brand-view .brand-image img {
+    object-fit: contain;
+    max-width: 300px;
+}
+.brand-brand-view .brand-image {
+    text-align: center;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+.brand-product-list .product-item-info {
+    margin: 0% 7% 0% 0%;
+}}
+</style>

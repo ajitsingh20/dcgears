@@ -1,0 +1,29 @@
+<?php
+$helper = $this->helper('MGS\Brand\Helper\Data');
+$params = $this->getRequest()->getParams();
+?>
+<div class="characters">
+    <ul class="characters-filter">
+        <?php if (isset($params['keyword']) && $params['keyword'] != ''): ?>
+            <?php foreach (range('A', 'Z') as $char): ?>
+                <li class="<?php if (isset($params['char']) && $params['char'] == $char): ?>active<?php endif; ?>"><a href="<?php echo $helper->getBrandUrl() . '?char=' . $char . '&keyword=' . $params['keyword']; ?>"><?php echo $char; ?></a></li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <?php foreach (range('A', 'Z') as $char): ?>
+                <li class="<?php if (isset($params['char']) && $params['char'] == $char): ?>active<?php endif; ?>"><a href="<?php echo $helper->getBrandUrl() . '?char=' . $char; ?>"><?php echo $char; ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </ul>
+    <div class="view-all">
+        <a title="<?php echo __('View All'); ?>" href="<?php echo $helper->getBrandUrl().'?all=yes'; ?>"><?php echo __('View All'); ?></a>
+    </div>
+	<div class="clear"></div>
+</div>
+
+<style>
+ul.characters-filter li {
+    border: 1px solid;
+    margin: 3px;
+    padding: 0px 0px;
+}
+</style>

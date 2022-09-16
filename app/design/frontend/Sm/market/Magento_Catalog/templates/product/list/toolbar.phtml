@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+
+?>
+<?php if ($block->getCollection()->getSize()): ?>
+    <div class="toolbar toolbar-products" data-mage-init='<?php /* @escapeNotVerified */
+    echo $block->getWidgetOptionsJson(); ?>'>
+        <div class="filter-mobile-btn">
+            <a id="btn-filter" href="javascript:void(0);"><span><?php echo __('Filter') ?></span></a>
+        </div>
+
+        <?php echo $block->getPagerHtml() ?>
+    </div>
+<?php endif ?>
+<style>
+.toolbar {
+    border-top: 0px solid #dddddd;
+    border-bottom: 0px solid #dddddd;
+}
+</style>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="columns">
+            <block class="Magento\Catalog\Block\Category\View" name="category.cust.desc" template="Rahi_Description::cust_description.phtml" after="-"/>
+	    <block class="Magento\Catalog\Block\Category\View" name="category.cust.slider" template="Rahi_Description::cust_slider.phtml" after="category.cust.desc"/> 
+        </referenceContainer>
+	<move element="category.contact_us_form" destination="columns"  after="category.cust.slider"/>
+
+
+    </body>
+</page>

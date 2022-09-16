@@ -1,0 +1,67 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+    $_product = $block->getProduct();
+?>
+<?php if ($_additional = $block->getAdditionalData()) :?>
+    <div class="additional-attributes-wrapper table-wrapper">
+        <table class="data table additional-attributes" id="product-attribute-specs-table">
+            <caption class="table-caption"><?= $block->escapeHtml(__('More Information')) ?></caption>
+            <tbody>
+
+        <tr><th class="col label" scope="row">Description</th><td class="col data"><?php echo $_product->getDescription();?></td></tr>
+         <?php foreach ($_additional as $_data) :?>
+    <?php   if ($_data['label'] != 'Brands') {
+?>
+
+                <tr>
+                    <th class="col label" scope="row"><?= $block->escapeHtml($_data['label']) ?></th>
+                    <td class="col data" data-th="<?= $block->escapeHtmlAttr($_data['label']) ?>"><?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
+                </tr>
+<?php } ?>
+            <?php endforeach; ?>
+
+
+<?php 
+$blockObj = $block->getLayout()->createBlock('MagePsycho\ProductAttachment\Block\Product\View\Attachment');
+$attachments = $blockObj->getAttachments();
+
+if (!empty($attachments)) { ?>
+    <tr>
+        <th class="col label" scope="row"><?= $block->escapeHtml('Downloads') ?> </th>
+        <td class="col data">
+    <?php foreach ($attachments as $attachment): ?>
+            <li>
+                <a class="attachment" href="<?= $block->escapeHtml($attachment['link']) ?>" target="_blank" title="<?= $block->escapeHtml($attachment['label']) ?>">
+                <?= $block->escapeHtml(__($attachment['label'])) ?>
+                </a>
+            </li>
+    <?php endforeach; ?>
+        </td>
+    </tr>
+<?php } ?>
+            </tbody>
+        </table>
+    </div>
+<?php endif;?>
+
+<style>
+a.attachment {
+    color: #fda124;
+    font-weight: bold;
+    text-decoration: underline;
+}
+</style>

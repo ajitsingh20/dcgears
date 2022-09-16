@@ -1,0 +1,44 @@
+<?php
+/**
+* Copyright © Magento, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+
+<?php
+    echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId('hd4-block')
+          ->toHtml();
+?>
+
+<style> 
+    @media (max-width: 768px){
+        .header-contact-details{
+            display: none;
+        }}
+        .header-style-14 .header-middle .middle-content .header-middle-right .search-header .sm-searchbox .sm-searchbox-content .control #searchbox {
+            margin-bottom: 4.5px;
+        }
+        @media only screen and (min-width: 1350px) and (max-width: 1450px) {
+          .header-style-14 .header-middle .search-header {
+            width: 83%;
+          }
+        }
+         @media only screen and (min-width: 1250px) and (max-width: 1350px) {
+	  .header-style-14 .header-middle .search-header {
+            width: 81%;
+           }
+        }
+         @media only screen and (min-width: 1100px) and (max-width: 1250px) {
+          .header-style-14 .header-middle .search-header {
+            width: 77%;
+           }
+         }
+         @media only screen and (min-width: 1450px) and (max-width: 1650px) {
+          .header-style-14 .header-middle .search-header {
+            width: 85%;
+          }
+         }
+</style>
+
+

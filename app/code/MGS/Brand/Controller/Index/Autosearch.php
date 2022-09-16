@@ -1,0 +1,49 @@
+<?php
+
+namespace MGS\Brand\Controller\Index;
+
+use Magento\Framework\App\Action\Context;
+
+class Autosearch extends \Magento\Framework\App\Action\Action
+{
+    protected $brand;
+
+    public function __construct(
+        Context $context,
+        \MGS\Brand\Model\Brand $brand) 
+    {
+        $this->brand = $brand;
+        parent::__construct($context);
+    }
+    public function execute()
+    {
+        $brandResponse = $this->resultFactory
+        ->create(\Magento\Framework\Controller\ResultFactory::TYPE_JSON);
+        $input =$this->getRequest()->getPost("input");
+        
+        if ($input) {
+            
+            try{
+
+                $brandCollection = $this->brand->getCollection()
+                ->addFieldToFilter('status', 1)
+                ->setOrder('name', 'ASC');
+
+                if (($input) && $input != '') {
+                    $brandCollection->addFieldToFilter('name', ['like' => '%' . $input . '%']);
+                }
+
+                $brandResponse->setData(['success' => true,'data' => $brandCollection->getData()
+
+                ]);
+
+            } catch (\Magento\Framework\Exception\LocalizedException $e) {
+                $brandResponse->setData(['error' => true,
+                    'message' => $this->messageManager->addErrorMessage($e->getMessage())
+                ]);
+            }
+        }
+        return $brandResponse;
+    }
+}
+

@@ -1,0 +1,17 @@
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+    
+?>
+<div class="category-custom-text">
+<div class="container">
+<?php echo $category->getCategoryText(); ?>
+</div>
+</div>

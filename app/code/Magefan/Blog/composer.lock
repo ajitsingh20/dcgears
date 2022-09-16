@@ -1,0 +1,109 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "69c10c41fdd1c67e66284880c7b5e804",
+    "packages": [
+        {
+            "name": "magefan/module-admin-user-guide",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-admin-user-guide.git",
+                "reference": "35f950396e7a443cf93e00603e45b2da23c03b58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-admin-user-guide/zipball/35f950396e7a443cf93e00603e45b2da23c03b58",
+                "reference": "35f950396e7a443cf93e00603e45b2da23c03b58",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\AdminUserGuide\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Admin panel user guides.",
+            "time": "2021-12-30T07:25:20+00:00"
+        },
+        {
+            "name": "magefan/module-community",
+            "version": "2.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-community.git",
+                "reference": "ff7fb0142f5326dcb35276a00a3015f5c2cbc2e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-community/zipball/ff7fb0142f5326dcb35276a00a3015f5c2cbc2e6",
+                "reference": "ff7fb0142f5326dcb35276a00a3015f5c2cbc2e6",
+                "shasum": ""
+            },
+            "require": {
+                "magefan/module-admin-user-guide": ">=2.0.1"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\Community\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2022-04-19T07:01:39+00:00"
+        },
+        {
+            "name": "magefan/module-wysiwyg-advanced",
+            "version": "2.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-wysiwyg-advanced.git",
+                "reference": "760b0746bb4f7acd0da10a9b0bff928bd52cfad9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-wysiwyg-advanced/zipball/760b0746bb4f7acd0da10a9b0bff928bd52cfad9",
+                "reference": "760b0746bb4f7acd0da10a9b0bff928bd52cfad9",
+                "shasum": ""
+            },
+            "require": {
+                "magefan/module-community": ">=2.1.8"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\WysiwygAdvanced\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Extend TinyMCE 4 in Magento 2",
+            "time": "2022-04-20T08:57:37+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

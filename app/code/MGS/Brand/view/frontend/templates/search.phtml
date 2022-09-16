@@ -1,0 +1,103 @@
+<?php
+$helper = $this->helper('MGS\Brand\Helper\Data');
+$params = $this->getRequest()->getParams();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
+$mediaUrl =$storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+$statiContenteUrl = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
+?>
+<div class="search">
+    <form id="search_brand_form" action="" method="get">
+        <div class="fields">
+            <div class="control">
+                <input id="search_brand"
+                       type="text"
+                       name="keyword"
+                       value="<?php if (isset($params['keyword'])) {
+                           echo $params['keyword'];
+                       } ?>"
+                       placeholder="<?php echo __('Search brand here...'); ?>"
+                       class="input-text"
+                       autocomplete="off"/>
+                <?php if (isset($params['char']) && $params['char'] != ''): ?>
+                    <input id="search_brand_by_char"
+                           type="hidden"
+                           name="char"
+                           value="<?php echo $params['char']; ?>"/>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="actions">
+            <button type="submit"
+                    title="<?php echo $block->escapeHtml(__('Search')) ?>"
+                    class="action search brand">
+                <span><?php echo __('Search'); ?></span>
+            </button>
+            <?php if (isset($params['keyword']) || isset($params['char']) || isset($params['all'])): ?>
+                <button type="button"
+                        onclick="window.location.href='<?php echo $helper->getBrandUrl(); ?>'"
+                        title="<?php echo $block->escapeHtml(__('Reset Filter')) ?>"
+                        class="action search">
+                    <span><?php echo __('Reset Filter'); ?></span>
+                </button>
+            <?php endif; ?>
+        </div>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#search_brand").keyup(function(){
+			var input = $(this).val();
+                        var customurl = "<?php echo $this->getUrl().'brand/index/autosearch'?>";
+			//alert(input);
+			console.log(input);
+			if(input != ""){
+				$.ajax({
+
+					url: customurl,
+					type: "POST",
+					data:{input:input},
+
+					success:function(response){
+						//console.log(response.data)
+
+						var html = "<div id='brand-suggestion'class='searchsuite-autocomplete-brand'><ul>";
+						response.data.forEach((value) => { html+="<li class='auto'><a href='<?php echo $statiContenteUrl ?>"+value.url_key+"'><img class='show-brand' src="+"<?php echo $mediaUrl ?>"+value.small_image+">"+value.name+"</a></li>";});
+
+						html += "</ul></div>"; 
+						//console.log(html)
+						$('#brand-suggestion').remove(); 
+						$(html).insertAfter('#search_brand');
+					}
+				});
+			}else{
+
+				$("#searchresult").css("display","none");
+
+			}
+		});
+	});
+</script>
+
+<style>
+.searchsuite-autocomplete-brand {
+    background-color: #fff;
+    border: 1px solid #c2c2c2;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 15%);
+}
+.searchsuite-autocomplete-brand li .line-1{
+  height: 1px;
+  background: black;
+}
+li.auto {
+    border-bottom: 1px solid #8080802b;
+}
+img.show-brand {
+    width: 65px;
+}
+</style>
+

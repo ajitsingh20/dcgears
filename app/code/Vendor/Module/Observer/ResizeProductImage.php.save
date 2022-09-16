@@ -1,0 +1,19 @@
+<?php declare(strict_types=1);
+
+namespace Vendor\Module\Observer;
+
+use Magento\Framework\Console\Cli;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\NullOutput;
+
+
+class ResizeProductImage implements \Magento\Framework\Event\ObserverInterface
+{
+	public function execute(\Magento\Framework\Event\Observer $observer)
+	{
+	       //echo('hello');exit;
+	$output = shell_exec('php bin/magento catalog:images:resize');
+        // print_r($output);
+	}
+}

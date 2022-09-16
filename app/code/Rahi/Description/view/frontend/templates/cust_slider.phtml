@@ -1,0 +1,30 @@
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+/*
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+
+$brands = $objectManager->create("MGS\Brand\Model\Resource\Brand\Collection");
+?>
+        <div class="custom-slider">
+                <?php
+                foreach ($brands->getData() as $item) {
+                $this->brandslider[] = $category->create(
+                [
+                   'url' => 'brands/' .$item['small_image'],
+                ]
+                );
+              }
+           return $this->brandslider; ?>
+        </div>
+*/
+
+        echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId('catalog-partner-logo')
+          ->toHtml();
+?>
+
